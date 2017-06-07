@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link type="text/css" href="{{ asset('css/budget.css') }}">
+{% endblock %}
+
+{% block scripts %}
+{{ parent() }}
+    <script src="{{ asset('javascript/budget_jquery.js') }}"></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+
+
+    <form action="{{ path('budget') }}" method="POST"></form>
+
+    <div id="income">
+        <p>Please enter your monthly income below</p>
+        <p class="label" id="salary">Salary: <input type="text" name="salary"></p>
+    </div>
+    <input type="button" class="addField" id="addIncome" value="Add Income">
+
+
+
+    <div id="expense">
+        <p>Please enter your monthly expenditure </p>
+    </div>
+    <input type="button" class="addField" id="addExpense" value="Add Expense">
+
+    <input type="submit" value="Complete">
+    </form>
+
+    <div id="addPopup">
+        <input type="text" id="popupText">
+        <input type="button" id="addButton" value="Add">
+    </div>
+
+
+
+
+
+
+{% endblock %}

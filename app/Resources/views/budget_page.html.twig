@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <p>Please enter your monthly income below</p>
+
+    <form action="{{ path('budget') }}" method="POST"></form>
+        <input type="text" value="Salery">
+        <input type="text" value="Other income">
+        <input type="submit" value="Next >>">
+    </form>
+
+
+
+
+
+
+{% endblock %}

@@ -5,14 +5,35 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class BudgetController
+
+class BudgetController extends Controller
 {
     /**
-     * @Route("/budget/{name}")
+     * @Route("/", name="home")
      */
-    public function showAction($name)
+    public function homePage()
     {
-        return new Response('This is the budget for ' . $name);
+        return $this->render('homepage.html.twig');
     }
+
+    /**
+     * @Route("/addIncomeExpense", name="incomeExpense")
+     */
+    public function incomeExpensePage()
+    {
+
+        return $this->render('income_expense_page.html.twig');
+    }
+
+    /**
+     * @Route("/budget", name="budget")
+     */
+    public function budgetPage()
+    {
+        return $this->render('budget_page.html');
+    }
+
+
 }
